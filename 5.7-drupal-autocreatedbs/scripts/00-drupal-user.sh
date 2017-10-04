@@ -1,0 +1,2 @@
+#crie um usuário com para administrar os bancos de dados das aplicações em Drupal (https://www.drupal.org/docs/7/system-requirements/database-server)
+mysql -u root -p$MYSQL_ROOT_PASSWORD <<< "CREATE USER $MYSQL_DRUPAL_USER_NAME@localhost IDENTIFIED BY '$MYSQL_DRUPAL_USER_PASSWORD';"
