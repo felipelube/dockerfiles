@@ -7,6 +7,7 @@ Este dockerfile, baseado oficial do Drupal 7, habilita adicionalmente os softwar
   - MySQL (pdo_mysql)
   - [PHPRedis](https://github.com/phpredis/phpredis/), instalada via PECL
 
+# Variáveis-ambiente
 O container espera que as seguintes variáveis-ambiente sejam definidas, de forma a alterar a 
 configuração padrão do Drupal:
 - DRUPAL_SITE_URL: (opicional) define explicitamente a URL do site
