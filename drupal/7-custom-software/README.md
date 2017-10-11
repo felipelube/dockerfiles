@@ -1,5 +1,5 @@
-# Drupal 7 (Apache), com software adicional e configurações customizadas
-Este dockerfile, baseado oficial do Drupal 7, habilita adicionalmente os softwares abaixo:
+# Drupal 7 (Apache) com software adicional e configurações customizadas
+Este dockerfile, baseado no oficial do Drupal 7, habilita adicionalmente os softwares abaixo:
 - Drush: para manutenção do site diretamente no container
 - [MySQL Client](https://dev.mysql.com/doc/refman/5.7/en/programs-client.html)
 - SQlite3
@@ -7,7 +7,7 @@ Este dockerfile, baseado oficial do Drupal 7, habilita adicionalmente os softwar
   - MySQL (pdo_mysql)
   - [PHPRedis](https://github.com/phpredis/phpredis/), instalada via PECL
 
-# Variáveis-ambiente
+## Variáveis-ambiente
 O container espera que as seguintes variáveis-ambiente sejam definidas, de forma a alterar a 
 configuração padrão do Drupal:
 - DRUPAL_SITE_URL: (opicional) define explicitamente a URL do site
