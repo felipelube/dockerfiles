@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  certs-extractor:
+    image: felubra/traefik-certs-extractor
+    restart: always
+    volumes:
+      - ${TRAEFIK_ACME_FILE}:/certs-extractor/acme.json:ro
+      - ${CERTS_OUTPUT_DIR}:/certs-extractor/certs/:rw
