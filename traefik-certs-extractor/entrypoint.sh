@@ -1,2 +1,2 @@
-#!/bin/bash
-entr ./dumpcerts.sh ./acme.json ./certs <<< ./acme.json
+#!/bin/sh
+find ./acme.json | entr ./dumpcerts.sh ./acme.json ./certs
