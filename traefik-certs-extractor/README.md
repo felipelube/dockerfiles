@@ -4,4 +4,4 @@ and the [Event Notify Test Runner (entr)](http://entrproject.org/).
 
 ## How to use
 - **Docker-compose**: Simply rename the `.env.dist` to `.env`, set the variables as documented in the file and add the Træfik and other services.
-- **Standalone container**: `docker run -v /path/to/acme.json:/certs-extractor/acme.json:ro -v /path/to/out/dir/:/certs-extractor/certs/ felubra/traefik-certs-extractor`
+- **Standalone container**: `docker run -v /path/to/acme.json:/certs-extractor/acme.json:ro -v /path/to/out/dir/:/certs-extractor/certs/ felubra/traefik-certs-extractor` ou `docker run -v /path/to/acme.json:/certs-extractor/acme.json:ro -v /path/to/out/dir/:/certs-extractor/certs/ felubra/traefik-certs-extractor:debian`
