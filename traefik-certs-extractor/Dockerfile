@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM debian:latest
 
 WORKDIR /certs-extractor
 
@@ -6,9 +6,14 @@ ADD https://raw.githubusercontent.com/containous/traefik/master/contrib/scripts/
 ADD ./entrypoint.sh ./entrypoint.sh
 
 RUN set -ex; \
-    apk add --no-cache bash entr jq openssl util-linux; \    
+    apt-get update; \
+    apt-get install -y --no-install-recommends \
+      entr \
+      jq \      
+      openssl \
+      util-linux; \
+    rm -rf /var/lib/apt/lists/*; \
     chmod +x ./dumpcerts.sh; \
     chmod +x ./entrypoint.sh;
 
-CMD ["./entrypoint.sh"]
-ENTRYPOINT ["sh"]
+ENTRYPOINT ["./entrypoint.sh"]
