@@ -7,11 +7,11 @@ ADD ./entrypoint.sh ./entrypoint.sh
 
 RUN set -ex; \
     apt-get update; \
-    apt-get install -y \
-      --no-install-recommends \
-      jq \
+    apt-get install -y --no-install-recommends \
+      entr \
+      jq \      
       openssl \
-      entr; \
+      util-linux; \
     rm -rf /var/lib/apt/lists/*; \
     chmod +x ./dumpcerts.sh; \
     chmod +x ./entrypoint.sh;

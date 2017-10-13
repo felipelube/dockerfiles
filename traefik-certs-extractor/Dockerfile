@@ -6,7 +6,7 @@ ADD https://raw.githubusercontent.com/containous/traefik/master/contrib/scripts/
 ADD ./entrypoint.sh ./entrypoint.sh
 
 RUN set -ex; \
-    apk add --no-cache jq openssl entr bash; \    
+    apk add --no-cache bash entr jq openssl util-linux; \    
     chmod +x ./dumpcerts.sh; \
     chmod +x ./entrypoint.sh;
 
