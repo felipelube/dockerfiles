@@ -8,13 +8,18 @@ COPY custom.php.inc /tmp/custom.php.inc
 RUN set -ex; \
   apt-get update; \
   apt-get install -y \
+    ssmtp \
     mysql-client \
     sqlite3; \
-  rm -rf /var/lib/apt/lists/*; \
   curl -f -L https://github.com/drush-ops/drush/releases/download/$DRUSH_VERSION/drush.phar > drush; \
+  pecl install redis-$PHPREDIS_VERSION; 
+
+RUN set -ex; \
+  rm -rf /var/lib/apt/lists/*; \
+  echo "FromLineOverride=YES" >> /etc/ssmtp/ssmtp.conf; \  
+  echo "sendmail_path = \"/usr/sbin/ssmtp -t\"" > /usr/local/etc/php/conf.d/mail.ini; \  
   chmod +x drush; \
-  cp drush /usr/local/bin; \
-  pecl install redis-$PHPREDIS_VERSION; \
+  cp drush /usr/local/bin; \    
   docker-php-ext-enable redis; \
   docker-php-ext-install pdo_mysql; \
   cp ./sites/default/default.settings.php ./sites/default/settings.php; \

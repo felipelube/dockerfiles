@@ -7,6 +7,8 @@ Este dockerfile, baseado no oficial do Drupal 7, habilita adicionalmente os soft
   - MySQL (pdo_mysql)
   - [PHPRedis](https://github.com/phpredis/phpredis/), instalada via PECL
 
+Além disso, a configuração permite o envio de e-mails através do sSMTP como MTA.
+
 ## Variáveis-ambiente
 O container espera que as seguintes variáveis-ambiente sejam definidas, de forma a alterar a 
 configuração padrão do Drupal:
