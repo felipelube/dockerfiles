@@ -9,7 +9,7 @@ RUN set -ex; \
     apt-get update; \
     apt-get install -y --no-install-recommends \
       entr \
-      jq \      
+      jq \
       openssl \
       util-linux; \
     rm -rf /var/lib/apt/lists/*; \
